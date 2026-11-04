@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>질문 접수 안내 포스터</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+  @page { size: A4; margin: 0; }
+  :root {
+    --navy: #14284b;
+    --accent: #e8a33d;
+    --ink: #1c2434;
+    --muted: #5b6577;
+    --paper: #fbf9f4;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { background: #d9dce2; }
+  body {
+    font-family: "Noto Sans KR", "WenQuanYi Zen Hei", sans-serif;
+    color: var(--ink);
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+  .poster {
+    width: 210mm;
+    height: 297mm;
+    margin: 0 auto;
+    background: var(--paper);
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20mm 18mm 14mm;
+  }
+  .band {
+    position: absolute; top: 0; left: 0; right: 0; height: 12mm;
+    background: var(--navy);
+  }
+  .band::after {
+    content: ""; position: absolute; left: 0; right: 0; bottom: -2mm; height: 2mm;
+    background: var(--accent);
+  }
+  .eyebrow {
+    margin-top: 8mm;
+    font-size: 15pt; font-weight: 700; letter-spacing: .3em;
+    color: var(--accent);
+  }
+  h1 {
+    margin-top: 4mm;
+    font-size: 44pt; font-weight: 900; line-height: 1.22;
+    color: var(--navy); text-align: center; letter-spacing: -0.02em;
+    word-break: keep-all;
+  }
+  h1 em { font-style: normal; background: linear-gradient(transparent 62%, rgba(232,163,61,.45) 62%); }
+  .qr-card {
+    margin-top: 10mm;
+    background: #fff;
+    border: 1.2mm solid var(--navy);
+    border-radius: 6mm;
+    padding: 7mm;
+    box-shadow: 3mm 3mm 0 var(--accent);
+  }
+  .qr-card img { display: block; width: 84mm; height: 84mm; }
+  .scan {
+    margin-top: 9mm;
+    font-size: 20pt; font-weight: 700; color: var(--navy);
+    text-align: center;
+  }
+  .scan small { display: block; margin-top: 2mm; font-size: 12.5pt; font-weight: 400; color: var(--muted); }
+  .promise {
+    margin-top: auto;
+    width: 100%;
+    margin-bottom: 0;
+    background: var(--navy);
+    color: #fff;
+    border-radius: 5mm;
+    padding: 8mm 8mm;
+    text-align: center;
+    font-size: 22pt; font-weight: 700; line-height: 1.5;
+    word-break: keep-all;
+  }
+  .promise b { color: var(--accent); font-weight: 900; }
+  .footer {
+    margin-top: 7mm;
+    font-size: 13pt; font-weight: 500; color: var(--muted); letter-spacing: .08em;
+  }
+  @media print {
+    html, body { background: none; }
+    .poster { margin: 0; }
+  }
+</style>
+</head>
+<body>
+  <main class="poster">
+    <div class="band"></div>
+    <div class="eyebrow">Q &amp; A</div>
+    <h1>궁금한 점,<br><em>질문</em>을 남겨주세요</h1>
+
+    <div class="qr-card">
+      <img src="question-form-qr.svg" alt="질문 접수 구글 폼 QR 코드">
+    </div>
+
+    <p class="scan">휴대폰 카메라로 QR 코드를 스캔하세요
+      <small>카메라를 QR 코드에 비추면 질문 입력 화면이 열립니다</small>
+    </p>
+
+    <p class="promise">질문 남겨주시면<br><b>한번에 공개해서</b> 답변드리겠습니다.</p>
+
+    <p class="footer">동우세무회계</p>
+  </main>
+</body>
+</html>
